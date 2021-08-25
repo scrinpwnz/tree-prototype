@@ -5,6 +5,7 @@ import FolderIcon from '@material-ui/icons/Folder'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 import { useStore } from '../../store/store'
+import { observer } from 'mobx-react-lite'
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -18,7 +19,7 @@ interface Props {
   item: DirectoryInterface
 }
 
-export const Directory: FC<Props> = ({ item }) => {
+export const Directory: FC<Props> = observer(({ item }) => {
   const classes = useStyles()
 
   const store = useStore()
@@ -30,4 +31,4 @@ export const Directory: FC<Props> = ({ item }) => {
       <Typography>{item.label}</Typography>
     </div>
   )
-}
+})

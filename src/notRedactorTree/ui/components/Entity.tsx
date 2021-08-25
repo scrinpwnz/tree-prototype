@@ -56,8 +56,12 @@ export const Entity: FC<Props> = observer(({ item, paddingLeft = 8 }) => {
     store.selectEntity(item)
   }
 
-  const handleToggle = () => {
-    store.toggleEntity(item)
+  const handleDoubleClick = () => {
+    if (item.type === 'directory') store.toggleEntity(item)
+    if (item.type === 'item') {
+      store.toggleEntity(item)
+      store.setActive(item as ItemInterface)
+    }
   }
 
   const isChildrenVisible = store.isEntityOpened(item) && item.children
@@ -69,7 +73,7 @@ export const Entity: FC<Props> = observer(({ item, paddingLeft = 8 }) => {
           [classes.selected]: store.isEntitySelected(item)
         })}
         style={{ paddingLeft }}
-        onDoubleClick={handleToggle}
+        onDoubleClick={handleDoubleClick}
         onClick={handleSelect}>
         {getRenderer(item)}
       </div>

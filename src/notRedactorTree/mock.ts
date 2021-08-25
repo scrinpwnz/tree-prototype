@@ -15,12 +15,14 @@ export const mock: Entity[] = [
             id: 3,
             type: 'item',
             label: 'Итем 1',
+            contentType: 'emoji',
             status: 'green'
           },
           {
             id: 4,
             type: 'item',
             label: 'Итем 2',
+            contentType: 'text',
             status: 'red'
           },
           {
@@ -28,6 +30,7 @@ export const mock: Entity[] = [
             type: 'item',
             label: 'Итем 3',
             status: 'grey',
+            contentType: 'text',
             children: [
               {
                 id: 6,
@@ -57,3 +60,20 @@ export const mock: Entity[] = [
     ]
   }
 ]
+
+export const emojiContent = {
+  3: {
+    value: "😁"
+  },
+}
+
+export const textContent = {
+  4: {
+    title: 'Титул итема с ID = 4',
+    text: 'lorem ipsum'
+  },
+  5: {
+    title: 'Титул итема с ID = 5',
+    text: 'Некоторый текст'
+  }
+}

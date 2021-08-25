@@ -24,4 +24,4 @@ export type Entity = Directory | Item | SubItem
 
 export type Status = 'green' | 'red' | 'grey'
 
-export type ContentType = 'smile' | 'text'
+export type ContentType = 'emoji' | 'text'
