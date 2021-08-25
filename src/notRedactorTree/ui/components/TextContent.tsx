@@ -21,10 +21,10 @@ export const TextContent: FC<Props> = ({item}) => {
   }
 
   return (
-    <div style={{padding: 8, display: 'flex', gridGap: 16, flexDirection: 'column' }}>
+    <div style={{padding: 16, display: 'flex', gridGap: 16, flexDirection: 'column' }}>
       <Typography variant={'h4'}>{title}</Typography>
       <Typography>{text}</Typography>
-      <Button variant={'contained'} onClick={handleSetColor}>
+      <Button variant={'contained'} onClick={handleSetColor} disableRipple>
         Поменять цвет баджа
       </Button>
     </div>

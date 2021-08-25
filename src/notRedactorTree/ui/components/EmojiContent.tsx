@@ -12,7 +12,7 @@ export const EmojiContent: FC<Props> = ({item}) => {
   const fontSize = !!emoji ? 124 : 24
 
   return (
-    <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize }}>
       <span>{emoji ?? 'Емоджи не найден 🙄'}</span>
     </div>
   )

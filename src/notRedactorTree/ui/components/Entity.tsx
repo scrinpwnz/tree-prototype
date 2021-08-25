@@ -15,13 +15,16 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   label: {
     '&:hover': {
-      background: theme.palette.action.hover,
       cursor: 'pointer',
       userSelect: 'none'
     }
   },
   selected: {
     backgroundColor: theme.palette.action.selected
+  },
+  active: {
+    backgroundColor: theme.palette.action.active,
+    color: '#fff'
   },
   children: {}
 }))
@@ -70,7 +73,8 @@ export const Entity: FC<Props> = observer(({ item, paddingLeft = 8 }) => {
     <div className={classes.root}>
       <div
         className={clsx(classes.label, {
-          [classes.selected]: store.isEntitySelected(item)
+          [classes.selected]: store.isEntitySelected(item),
+          [classes.active]: store.isEntityActive(item)
         })}
         style={{ paddingLeft }}
         onDoubleClick={handleDoubleClick}

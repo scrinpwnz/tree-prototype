@@ -1,5 +1,12 @@
 .App-logo {
   height: 10vmin;
+  user-select: none;
+  pointer-events: none;
+}
+
+.MobX-logo {
+  height: 10vmin;
+  user-select: none;
   pointer-events: none;
 }
 

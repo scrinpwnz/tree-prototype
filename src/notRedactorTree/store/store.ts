@@ -26,6 +26,10 @@ export class Store {
     makeAutoObservable(this)
   }
 
+  public isEntityActive(entity: Entity) {
+    return this.state.get('active')?.id === entity.id
+  }
+
   public isEntitySelected(entity: Entity) {
     return this._entitiesSelectedState.get(entity)
   }
